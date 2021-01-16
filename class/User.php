@@ -85,21 +85,21 @@ class User {
         return $this->core->listApps($this);
     }
     /**
-     * 
+     *
      * @param type $id
      * @return App
      */
     public function getApp($id) {
         return $this->core->getApp($this, $id);
     }
-    
+
     public function createApp($name, $pkg) {
         return $this->core->newApp($this, $name, $pkg);
     }
     public function removeApp($name) {
         return $this->core->removeApp($this, $name);
     }
-    
+
     public function changeSettings($app, $pkg, $error_pkg, $push)
     {
         return $this->core->settingsApp($this, $app, $pkg, $error_pkg, $push);
@@ -111,5 +111,3 @@ class User {
 
 
 }
-
-?>
