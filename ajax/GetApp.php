@@ -95,6 +95,16 @@ if (haveLogin()) {
             <small class="help-block">Utilize esta id para enviar nuevos reportes.</small>
         </blockquote>
         <blockquote>
+
+            <h2>Adjuntar Codigo Fuente</h2>
+            <form method="POST" action="cpanel.php" enctype="multipart/form-data">
+                <input type="file" name="source" />
+                <input type="hidden" name="source_app" value="<?php echo $app->getAppId(); ?>" />
+                <span class="help-block">Archivos zip menores de 1M con el AndroidManifest.xml en su raiz.</span><input type="submit" value="Subir"/>
+            </form>
+
+        </blockquote>
+        <blockquote>
             <h3>Versiones</h3>
             <div>
                 <?php
@@ -125,33 +135,6 @@ if (haveLogin()) {
                 ?>
             </div>
         </blockquote>
-<!--        <h3>Backups</h3>-->
-<!--        <div>-->
-<!--            --><?php
-//            $list = $app->listBackups();
-//            while($row = mysql_fetch_array($list))
-//            {
-//                $folder = "../backups/" . $app->getAppId();
-//                $date = date("ymd-H:i", $row['date']);
-//                $file = $folder . "/filesystem-" . $date . ".zip";
-//                if(!file_exists($file))
-//                {
-//                    continue;
-//                }
-//                $size_f = bytesToSize(filesize($file),0);
-//                $file = $folder . "/sql-" . $date . ".sql";
-//                $size_s = bytesToSize(filesize($file),0);
-//                echo date("d/m/y H:i", $row['date']) . " <a href=\"download.php?item=sql&time={$row['date']}&app={$app->getAppId()}\">sql</a> ($size_s) - <a href=\"download.php?item=filesystem&time={$row['date']}&app={$app->getAppId()}\">filesystem</a> ($size_f) <br>";
-//                ?>
-<!--            -->
-<!--            Download from command line:-->
-<!--            <code>-->
-<!--                wget  wget --user=[username] --password=[password] http://--><?php //echo $_SERVER['HTTP_HOST'] ?><!--/report/wget.php?item=sql&time=--><?php //echo $row['date'] ?><!--&app=--><?php //echo $app->getAppId(); ?>
-<!--            </code>-->
-<!--            --><?php
-//            }
-//             ?>
-<!--        </div>-->
         <br>
         <div class="modal-footer">
             <button data-toggle="modal" href="#settings" type="button" class="btn btn-default">Ajustes</button>

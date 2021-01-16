@@ -121,5 +121,3 @@ if (haveLogin()) {
 } else {
     echo "Por favor, logeese de nuevo <a href='login.php'>Login</a>";
 }
-?>
-

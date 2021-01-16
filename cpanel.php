@@ -14,7 +14,7 @@ if (!haveLogin()) {
     } else if (isset($_REQUEST['app'])) {
         if(isset($_REQUEST['new_app_pkg']))
         {
-            
+
             getUser()->changeSettings($_REQUEST['app'], $_REQUEST['new_app_pkg'], $_REQUEST['new_app_pkg_errors'], $_REQUEST['push_url']);
 
         }
@@ -167,4 +167,3 @@ if (!haveLogin()) {
 
     <?php
 }
-?>
