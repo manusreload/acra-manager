@@ -1,0 +1,16 @@
+/* 
+    Document   : default
+    Created on : 25-dic-2012, 15:19:09
+    Author     : manus
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+code { 
+    display: block;
+}
+
+.invisible
+{
+    display: none;
+}
